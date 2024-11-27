@@ -1,0 +1,12 @@
+﻿@page "/statmen/New/{Type}"
+@inherits Statmen
+
+@{
+    // Display the base RadzenDataGrid that we are inheriting from.
+    base.BuildRenderTree(__builder);
+}
+
+@code {
+    [Parameter]
+    public string? Type { get; set; }
+}

@@ -1,0 +1,29 @@
+﻿
+@inherits Field;
+
+<body>
+    <div>
+        @{
+            base.BuildRenderTree(__builder);
+        }
+        @if (collection is not null && collection.Values is not null && collection.Values.Length!=0)
+        {
+            <InputSelect @bind-Value="@Date.value" id="@Date.Id" class="@Date.ClassType" disabled=@Date.IsDisabled >
+                @foreach (string item in collection.Values)
+                {
+                    <option value="@item">@item</option>
+                }
+            
+        </InputSelect>
+        }
+        else if (IsLoading)
+        {
+            <input type="text" id="@Date.Id" class="@Date.ClassType" style="background-color:yellow" disabled="disabled" value="Загрузка">
+        }
+        else
+        {
+            <input type="text" id="@Date.Id" class="@Date.ClassType" style="background-color:red" disabled="disabled" value="Ошибка загрузки">
+        }
+    </div>
+</body>
+

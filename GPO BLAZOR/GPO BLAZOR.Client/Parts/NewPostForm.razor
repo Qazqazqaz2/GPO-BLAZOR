@@ -1,0 +1,24 @@
+﻿@using Microsoft.AspNetCore.Components.Forms
+@using Microsoft.AspNetCore.Components.Web
+@inherits ComponentBase
+
+@inject IJSRuntime jsr
+
+@page "/joj"
+<form>
+    <InputSelect @bind-Value="@actionWord" @onchange="@Click" @bind-Value:after="@Click">
+        @if (postModel is null)
+        {
+            <h1>Загрузка данных</h1>
+        }
+        else
+        {
+            @foreach (var el in postModel.Fields.Keys)
+            {
+                <option value="@el"><h3>@el</h3></option>
+            }
+        }
+    </InputSelect>
+</form>
+
+

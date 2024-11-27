@@ -1,0 +1,25 @@
+﻿div.bodydiv {
+    width: max-width;
+    height: 100;
+    margin: 20px;
+    padding: 0px;
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
+div.text{
+    display: inline-block;
+    color: var(--button-color);
+    text-align: center;
+    position: relative;
+    bottom: 20px; 
+    font-size: medium;
+    left: 20px;
+    top: 10px;
+}
+
+div.imgine {
+    display: inline-block;
+    border-right: solid 2px var(--button-color);
+    padding-right: 20px;
+}

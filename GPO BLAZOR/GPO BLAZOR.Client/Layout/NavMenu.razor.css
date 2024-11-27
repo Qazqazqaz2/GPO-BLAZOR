@@ -1,0 +1,33 @@
+div {
+    margin: 0px;
+    padding: 0px;
+    height: 40px;
+    width: 100%;
+}
+
+button {
+    margin: 0px;
+    padding: 0px;
+    font-weight: 400;
+    border: none;
+    width: 150px;
+    height: 40px;
+    display: inline-block;
+    color: white;
+    font-size: large;
+    text-align: left;
+    position: relative;
+    margin-right: 15px;
+}
+
+    button:hover {
+        background-color: white;
+        color: black
+    }
+
+    button:focus {
+        background-color: greenyellow;
+        color: black
+    }
+
+    

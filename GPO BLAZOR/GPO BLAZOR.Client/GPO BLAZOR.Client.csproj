@@ -1,0 +1,47 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <NoDefaultLaunchSettingsFile>true</NoDefaultLaunchSettingsFile>
+    <StaticWebAssetProjectMode>Default</StaticWebAssetProjectMode>
+    <RootNamespace>GPO BLAZOR.Client</RootNamespace>
+    <AssemblyName>$(AssemblyName.Replace(' ', '_'))</AssemblyName>
+    <Configurations>Debug;Release;IIS DEBUG</Configurations>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Remove="Pages\Statmen.razor.razor" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Class\Field\TymeField.razor.css" />
+    <None Remove="Pages\Statmens.razor.css" />
+    <None Remove="Parts\Block.razor.css" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Class\Field\TymeField.razor.css" />
+    <Content Include="Pages\Statmens.razor.css" />
+    <Content Include="Parts\Block.razor.css" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="9.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Authentication" Version="9.0.0" />
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="9.0.1" />
+    <PackageReference Include="System.Formats.Asn1" Version="9.0.0" />
+    <PackageReference Include="System.Text.Encodings.Web" Version="9.0.0" />
+	
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Class\Field\TymeField.razor" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="Class\Field\TymeField.razor" />
+  </ItemGroup>
+
+</Project>

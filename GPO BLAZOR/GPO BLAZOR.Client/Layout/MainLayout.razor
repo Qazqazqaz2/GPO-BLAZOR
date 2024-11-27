@@ -1,0 +1,68 @@
+﻿@using GPO_BLAZOR.Client.Class.Date
+@using GPO_BLAZOR.Client.Parts
+@using GPO_BLAZOR.Client.Class.JSRunTimeAccess;
+
+
+@inherits LayoutComponentBase
+
+<link href="GPO_BLAZOR.styles.css" rel="stylesheet" type="text/css">
+
+
+<Logo />
+@if (_authorizationDate!=null && _authorizationDate.IsCookies)
+{
+    <div class="">
+        <div style="background-color:blue">
+            <NavMenu />
+        </div>
+
+        <main>
+            @Body
+        </main>
+    </div>
+}
+else
+{
+    <div>          
+        <GPO_BLAZOR.Client.Pages.AutorizationForm AuthorizationInterface="_authorizationDate" AuthorizationInterfaceChanged="AuthorizationSuccesed" timer="timer"/>
+    </div>
+}
+
+
+@*<div id="blazor-error-ui">
+    An unhandled error has occurred.
+    <a href="" class="reload">Reload</a>
+    <a class="dismiss">🗙</a>
+</div>*@
+
+@code
+{
+
+    private System.Timers.Timer timer;
+
+    private IAuthorizationDate _authorizationDate { get; set; } =  new AuthorizationDate();
+
+    async Task AuthorizationSuccesed(IAuthorizationDate AuthorizationDate)
+    {
+        GPO_BLAZOR.Client.Class.Date.Requesting.ErrorAutorization += OpenAutorization;
+        _authorizationDate = AuthorizationDate;
+    }
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+
+    }
+
+
+
+    private void OpenAutorization()
+    {
+        _authorizationDate = new AuthorizationDate();
+#if DEBUG
+        Console.WriteLine("RefresvNavMenu");
+#endif
+    }
+
+
+}

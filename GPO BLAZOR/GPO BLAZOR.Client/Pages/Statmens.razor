@@ -1,0 +1,79 @@
+﻿@using GPO_BLAZOR.Client.Parts
+@using GPO_BLAZOR.Client.Class.Date
+@using GPO_BLAZOR.Client.Class.JSRunTimeAccess;
+@using Microsoft.AspNetCore.Components.Routing
+@using Microsoft.AspNetCore.Components.Web
+@inject NavigationManager Navigation
+@inject IJSRuntime jsr
+
+
+
+@page "/"
+@if (NewPostMenuViem)
+{
+    <div>
+        <div>
+            <NewPostForm Navigator="Navigation"/>
+        </div>
+        <input type="button" value="Закрыть" @onclick="PostWrotten" style="background-color:@InterfaceColor.TusurColor"/>
+    </div>
+}
+else
+{
+    <div>
+        <PageTitle>Таблица заявлений</PageTitle>
+        <table>
+            <thead>
+                <tr>
+                    <td>
+                        Создано
+                    </td>
+                    <td>
+                        Вид практики
+                    </td>
+                    <td>
+                        Статус
+                    </td>
+                    <td>
+
+                    </td>
+                </tr>
+            </thead>
+            <tbody>
+                @if (isLoadind)
+                {
+                    @if (Date != null)
+                    {
+                        @foreach (IStatmenTableLineModel temp in Date.Lines)
+                        {
+                            <Label Date="temp" ViemStatmen="Click"/>
+                        }
+
+                    }
+                    else
+                    {
+                        <tr>
+                            <td colspan="4">
+                                <h3>Данные отсутствуют</h3>
+                            </td>
+                        </tr>
+                    }
+
+                }
+                else
+                {
+                    <tr>
+                        <td colspan="4">
+                            <h3>Загрузка данных</h3>
+                        </td>
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+
+        <input type="button" value="Создать" @onclick="NewPost" style="background-color:@InterfaceColor.TusurColor"/>
+}
+
+

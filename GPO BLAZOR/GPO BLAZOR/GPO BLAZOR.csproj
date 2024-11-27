@@ -1,0 +1,62 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>GPO BLAZOR</RootNamespace>
+    <AssemblyName>$(AssemblyName.Replace(' ', '_'))</AssemblyName>
+    <UserSecretsId>24c7de14-f3cc-45dc-9528-722d43860cc1</UserSecretsId>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <DockerfileContext>..\..</DockerfileContext>
+    <StartupObject>GPO_BLAZOR.Program</StartupObject>
+    <Configurations>Debug;Release;IIS DEBUG</Configurations>
+    <LangVersion>preview</LangVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="PDFConstructor\FormTemplate\**" />
+    <Compile Remove="DBAgent\**" />
+    <Compile Remove="wwwroot\Новая папка\**" />
+    <Content Remove="PDFConstructor\FormTemplate\**" />
+    <Content Remove="DBAgent\**" />
+    <Content Remove="wwwroot\Новая папка\**" />
+    <EmbeddedResource Remove="PDFConstructor\FormTemplate\**" />
+    <EmbeddedResource Remove="DBAgent\**" />
+    <EmbeddedResource Remove="wwwroot\Новая папка\**" />
+    <None Remove="PDFConstructor\FormTemplate\**" />
+    <None Remove="DBAgent\**" />
+    <None Remove="wwwroot\Новая папка\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\GPO BLAZOR.Client\GPO BLAZOR.Client.csproj" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="9.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="9.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Authentication" Version="9.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="9.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Formatters.Xml" Version="2.1.3" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="9.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="9.0.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Caching.Memory" Version="9.0.0" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.12.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.21.0" />
+    <PackageReference Include="MSTest.TestFramework" Version="3.6.3" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="9.0.1" />
+    <PackageReference Include="PDFsharp" Version="6.1.1" />
+    <PackageReference Include="PDFsharp-MigraDoc" Version="6.1.1" />
+    <PackageReference Include="runtime.native.System.Security.Cryptography.OpenSsl" Version="4.3.3" />
+    <PackageReference Include="System.Formats.Asn1" Version="9.0.0" />
+    <PackageReference Include="System.Security.Cryptography.OpenSsl" Version="5.0.0" />
+    <PackageReference Include="System.Text.Encodings.Web" Version="9.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\bootstrap\" />
+  </ItemGroup>
+
+</Project>

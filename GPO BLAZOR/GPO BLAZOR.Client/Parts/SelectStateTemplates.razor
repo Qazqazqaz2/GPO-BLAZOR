@@ -1,0 +1,54 @@
+﻿@using GPO_BLAZOR.Client.Class.Date;
+
+
+<body>
+@if (isLoading)
+{
+    <h2>
+        Загрузка
+    </h2>
+}
+else
+{
+    <form>
+            
+        <button value="Отправить" @onclick="@ButtonClicked">
+            Отправить
+        </button>
+    }
+     </form>
+}
+</body>
+
+
+
+@code {
+    private bool isLoading;
+
+    protected override async Task OnInitializedAsync()
+    {
+        isLoading = false;
+
+
+
+        base.OnInitializedAsync();
+    }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        isLoading = true;
+        base.OnAfterRenderAsync(firstRender);
+    }
+
+    [Parameter]
+    [EditorRequired]
+    public EventCallback<string> FinishCreatePost { get; set; }
+
+    private async Task ButtonClicked ()
+    {
+
+
+        FinishCreatePost.InvokeAsync();
+    }
+
+}

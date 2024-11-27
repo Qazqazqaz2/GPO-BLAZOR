@@ -1,0 +1,28 @@
+﻿<?xml version="1.0"?>
+
+<Body DBName="gpo2">
+	<SQLQuery>
+		<get>
+		SELECT *
+		From DBTableName
+		</get>
+		<set>
+			
+		</set>
+		<post>
+			
+		</post>
+		<delete>
+			
+		</delete>
+	</SQLQuery>
+	<PrimaryTable TableName="NamePrimarytable" CollumName="NamePrimaryCollum">
+		
+		<ForeignTable>
+			
+		</ForeignTable>
+		<ForeignTable>
+
+		</ForeignTable>
+	</PrimaryTable>
+</Body>

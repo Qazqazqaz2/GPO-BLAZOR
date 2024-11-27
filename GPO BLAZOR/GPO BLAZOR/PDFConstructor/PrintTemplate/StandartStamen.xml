@@ -1,0 +1,43 @@
+﻿<?xml version="1.0"?>
+<Page>
+	<Text Alignment="left" tab="false">
+		Заведующему каферы КИБЭВС \n
+		<element name="CafedralLeaderName" pasernameuser="R"/>\n
+		от студента группы <element name="StudentGroup" />\n
+		<element name="StudentName" pasernameuser="R"/>\n
+		<span leght="1"/>
+		<Text styel="bold">
+			Заявление 
+		</Text>
+		<span leght="1" />
+		<Text Alignment="Justify" spansize="8">
+			Прощу направить меня на прохождение <element name="PracticType" /> 
+			в профильную организацию <element name="FactoryName" />
+			(<element name="FactoryAddress" />) c <element name="PracticStartTime" /> до <element name="PracticEndTime" />
+		</Text>
+		<tabble>
+			<tabbleLine>
+				<collumn>
+					Дата: <element name="StatmenDate" />
+				</collumn>
+				<collumn>
+					Подпись_______________________
+				</collumn>
+			</tabbleLine>
+		</tabble>
+</Text>
+	<Tabble>
+		<Line>
+			<Collum>
+				<InsertedElement name="FirstNameTextField" />
+			</Collum>
+			<Collum />
+			<Collum />
+		</Line>
+		<Line>
+			<Collum />
+			<Collum />
+			<Collum />
+		</Line>
+	</Tabble>
+</Page>

@@ -1,0 +1,13 @@
+﻿body {
+}
+
+select.CollectionInformationField 
+{
+    margin-top: 10px;
+    background-color: greenyellow;
+    border: 1px solid black;
+    height: 30px;
+    border-radius: 10px;
+    display: block;
+    flex: auto;
+}

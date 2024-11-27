@@ -1,0 +1,41 @@
+﻿body {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    display: inline-block;
+} 
+body > select {
+    margin-top: 10px;
+    background-color: greenyellow;
+    border: 1px solid black;
+    height: 30px;
+    border-radius: 10px;
+    display: block;
+    flex: auto;
+}
+
+    body > input {
+        margin-top: 10px;
+        background-color: greenyellow;
+        border: 1px solid black;
+        height: 30px;
+        border-radius: 10px;
+        display: block;
+        flex: auto;
+    }
+
+body > option {
+    margin-top: 10px;
+    background-color: greenyellow;
+    border: 1px solid black;
+    height: 30px;
+    border-radius: 10px;
+    display: block;
+    flex: auto;
+}
+
+h5 {
+    margin-bottom: 10px;
+    display: block
+}

@@ -1,0 +1,40 @@
+﻿div.body {
+    margin-left: 40%;
+    margin-top: 15%;
+}
+
+input.DateInput {
+    input .InputInformationField;
+    background-color: greenyellow;
+    border: 1px solid black;
+    height: 30px;
+    border-radius: 10px;
+    display: block 
+}
+input.AgreeButton {
+    font-weight: 400;
+    border: none;
+    width: 150px;
+    height: 40px;
+    background-color: var(--button-color);
+    display: inline-block;
+    color: white;
+    font-size: large;
+    text-align: left;
+    position: relative;
+    margin-top: 20px;
+    position: center
+}
+   input.AgreeButton:hover {
+        color: black;
+        background-color: #eae625;
+        
+    }
+    h1 {
+    font-weight: normal
+}
+
+h3 {
+    font-weight: normal
+}
+

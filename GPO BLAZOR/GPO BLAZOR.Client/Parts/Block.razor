@@ -1,0 +1,42 @@
+﻿@using GPO_BLAZOR.Client.Class.Date
+@using GPO_BLAZOR.Client.Class.Field
+
+<body>
+    <h3>
+        @Date.BlockName
+    </h3>
+    
+    <div>
+    @foreach (IField temp in Date.Date)
+    {
+            switch (temp.ClassType)
+            {
+                case "CollectionInformationField":
+                    <SelectedTextField Date="temp" />
+                    break;
+                case "InputInformationField":
+                    <TextField Date="temp" />
+                    break;
+                case "TymeInformationField":
+                    <TymeField Date="temp" />
+                    break;
+                default:
+                    <h1> ComponentError </h1>
+                    <TextField Date="temp" />
+                    break;
+            }
+            
+    }
+    </div>
+
+</body>
+
+@code {
+    [Parameter]
+    public IBlock Date { get; set; }
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+    }
+}

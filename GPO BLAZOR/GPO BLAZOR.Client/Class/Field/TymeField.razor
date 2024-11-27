@@ -1,0 +1,11 @@
+﻿@using GPO_BLAZOR.Client.Class.Date;
+@inherits Field
+
+<body>
+    <div>
+        @{
+            base.BuildRenderTree(__builder);
+        }
+        <input disabled=@Date.IsDisabled id="@Date.Id" type="date" class="@Date.ClassType" name="@Date.Name" @bind="@DateTime" />
+    </div>
+</body>
